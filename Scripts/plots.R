@@ -14,6 +14,7 @@ source(here::here("scripts/functions.R"))
 # globals ----
 rel_colors <- c("darkblue", "darkorange")
 bc_colors <- c("#ff3800", "#ffc000")
+rel_comp_colors <- c("darkblue", "#ffc000")
 breaks <- seq(-300, 300, 100)
 limits <- c(-300, 300)
 
@@ -183,6 +184,7 @@ block_p <- ggplot(rel_effs[rel_effs$Manipulation == "Blocked",], aes(x=load, y=D
   geom_errorbar(data = se, aes(x = load, ymin = Distraction - ci, ymax = Distraction + ci), width = .05,
                 position = position_dodge(width = .6))+
   labs(x = "Load", y = "Difference from absent condition (ms)", linetype = "Load type")+
+  geom_hline(yintercept = 0, linetype = "dashed") +
   scale_x_discrete(labels = c("Low", "High")) +
   scale_fill_manual(values=bc_colors) +
   scale_color_manual(values=bc_colors) +
@@ -205,6 +207,7 @@ mixed_p <- ggplot(rel_effs[rel_effs$Manipulation == "Mixed",], aes(x=load, y=Dis
   geom_errorbar(data = se, aes(x = load, ymin = Distraction - ci, ymax = Distraction + ci), width = .05,
                 position = position_dodge(width = .6))+
   labs(x = "Load", y = "Difference from absent condition (ms)", linetype = "Load type")+
+  geom_hline(yintercept = 0, linetype = "dashed") +
   scale_x_discrete(labels = c("Low", "High")) +
   scale_fill_manual(values=bc_colors) +
   scale_color_manual(values=bc_colors) +
@@ -334,8 +337,8 @@ ggplot(effs, aes(x=load, y=Distraction, color = Contrast, fill = Contrast))+
   geom_errorbar(data = se, aes(x = load, ymin = Distraction - ci, ymax = Distraction + ci), width = .05)+
   labs(x = "Load", y = "Difference from absent condition (ms)")+
   scale_x_discrete(labels = c("Low", "High")) +
-  scale_fill_manual(values=bc_colors) +
-  scale_color_manual(values = bc_colors) +
+  scale_fill_manual(values=rel_comp_colors) +
+  scale_color_manual(values = rel_comp_colors) +
   scale_y_continuous(limits = limits, breaks = breaks) +
   geom_hline(yintercept = 0, linetype = "dashed") +
   theme_Publication(base_size = 15)+
