@@ -104,7 +104,7 @@ ggplot(all_effs, aes(x=load, y=Distraction, fill = Type, color = Type)) +
   theme(legend.position = "bottom",
         strip.text = element_text(size = 15))
 
-ggsave(here::here("plots/figure4.png"), height = 7, width = 10, dpi = 1200)
+ggsave(here::here("Output/plots/figure4.png"), height = 7, width = 10, dpi = 1200)
 
 # Experiment 3 ----
 
@@ -153,7 +153,7 @@ ggplot(all_effs, aes(x=load, y=Distraction, fill = Type, color = Type)) +
   theme(legend.position = "bottom",
         strip.text = element_text(size = 15))
 
-ggsave(here::here("plots/figure5.png"), height = 7, width = 10, dpi = 1200)
+ggsave(here::here("Output/plots/figure5.png"), height = 7, width = 10, dpi = 1200)
 
 # Absent baseline:
 rel_effs <- get_effects(sum_data(raw_all, ACC = F, Type = "Relevant", experiment = "exp3"), "RT")%>% 
@@ -220,7 +220,7 @@ mixed_p <- ggplot(rel_effs[rel_effs$Manipulation == "Mixed",], aes(x=load, y=Dis
 ggarrange(block_p, mixed_p, nrow = 2, labels = c("Blocked Load", "Mixed Load"), label.x = c(0.37, 0.39), # Adjust labels for central position 
           font.label = list(size = 18))
 
-ggsave(here::here("plots/figure7.png"), height = 12, width = 10, dpi = 1200)
+ggsave(here::here("Output/plots/figure7.png"), height = 12, width = 10, dpi = 1200)
 
 # Experiment 4 ----
 rel_effs <- get_effects(sum_data(raw_all, ACC = F, Type = "Relevant", experiment = "exp4"), "RT")%>% 
@@ -271,7 +271,7 @@ ggplot(all_effs, aes(x=load, y=Distraction, fill = Type, color = Type)) +
   theme(strip.text = element_text(size = 15))
 
 
-ggsave(here::here("plots/figure8.png"), height = 7, width = 12, dpi = 1200)
+ggsave(here::here("Output/plots/figure8.png"), height = 7, width = 12, dpi = 1200)
 
 # Absent baseline:
 rel_effs <- get_effects(sum_data(raw_all, ACC = F, Type = "Relevant", experiment = "exp4"), "RT")%>% 
@@ -305,7 +305,7 @@ ggplot(rel_effs, aes(x=load, y=Distraction, color = Contrast, fill = Contrast))+
   theme(strip.text = element_text(size = 15),
         legend.position  = "none")
 
-ggsave(here::here("plots/figure9.png"), height = 7, width = 10, dpi = 1200)
+ggsave(here::here("Output/plots/figure9.png"), height = 7, width = 10, dpi = 1200)
 
 # Relevant cost vs irrelevant cost:
 rel_effs <- get_effects(sum_data(raw_all, ACC = F, Type = "Relevant", experiment = "exp4"), "RT")%>% 
@@ -345,4 +345,4 @@ ggplot(effs, aes(x=load, y=Distraction, color = Contrast, fill = Contrast))+
   theme(strip.text = element_text(size = 15),
         legend.position  = "none")
 
-ggsave(here::here("plots/figure10.png"), height = 7, width = 10, dpi = 1200)
+ggsave(here::here("Output/plots/figure10.png"), height = 7, width = 10, dpi = 1200)
