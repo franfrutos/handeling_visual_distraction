@@ -1,3 +1,6 @@
+# Author: Francisco Garre-Frutos
+
+# Loading packages
 if (!require(pacman)) {
   install.packages(pacman)
   load("pacman")

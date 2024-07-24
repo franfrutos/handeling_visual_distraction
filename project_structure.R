@@ -1,5 +1,4 @@
 # Author: Francisco Garre-Frutos
-# Date: 20/06/2024
 
 # Script to create the project structure. Run only at the beginning of the project.
 

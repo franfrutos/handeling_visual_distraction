@@ -1,9 +1,12 @@
+# Author: Francisco Garre-Frutos
+
+# Loading packages
 if (!require(pacman)) {
   install.packages(pacman)
   load("pacman")
 }
 
-p_load(dplyr, afex, emmeans, ggplot2, ggrain, tidyr, Rmisc, cowplot)
+p_load(dplyr, afex, emmeans, ggplot2, tidyr, Rmisc)
 
 
 # Helper functions ----
