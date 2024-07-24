@@ -10,6 +10,8 @@ p_load(dplyr, tidyr, here, afex, emmeans)
 source(here::here("scripts/load_data.R"))
 
 # In the functions.R script, each helper to perform the analysis function is explained in detail.
+source(here::here("scripts/functions.R"))
+
 # experiment 1 ----
 
 # N and % of trials excluded
